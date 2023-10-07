@@ -263,21 +263,8 @@ section {
   border-color: #eee;
 }
 
-.header .logo img {
-  max-height: 40px;
-  margin-right: 6px;
-}
-
-.header .logo h1 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #000;
-  margin: 0;
-  font-family: var(--font-secondary);
-}
-
-.header .logo h1 span {
-  color: var(--color-primary);
+.header .logo .mb-logo {
+  height: 2rem;
 }
 
 .header .btn-join-the-trial,
