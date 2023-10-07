@@ -18,20 +18,8 @@
   }
 
   .logo {
-    img {
-      max-height: 40px;
-      margin-right: 6px;
-    }
-    
-    h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #000;
-      margin: 0;
-      font-family: var(--font-secondary);
-      span {
-        color: var(--color-primary);
-      }
+    .mb-logo {
+      height: 2rem;
     }
   }
 
