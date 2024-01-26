@@ -65,7 +65,6 @@
     }
   }
 
-
   @media (max-width: 640px) {
     h2 {
       font-size: 36px;
@@ -74,6 +73,12 @@
     .btn-get-started, .btn-watch-video {
       font-size: 14px;
     }
+  }
+
+  .mb-iframe {
+    width: 100%;
+    aspect-ratio: 560/315;
+    height: auto;
   }
 
 }
