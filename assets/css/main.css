@@ -97,6 +97,32 @@ section {
   color: var(--color-primary);
 }
 
+.mb-invite-code-container p {
+  margin-bottom: 0.25rem;
+}
+
+.mb-invite-code {
+  font-size: 32px;
+  font-weight: 700 !important;
+  color: #F06B25 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.mb-download-badge {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 992px) {
+  .mb-download-badge {
+    justify-content: start;
+  }
+}
+
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -127,11 +153,11 @@ section {
   font-size: 14px;
 }
 
-.breadcrumbs ol li + li {
+.breadcrumbs ol li+li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li + li::before {
+.breadcrumbs ol li+li::before {
   display: inline-block;
   padding-right: 10px;
   color: #676775;
@@ -316,7 +342,7 @@ section {
     position: relative;
   }
 
-  .navbar > ul > li {
+  .navbar>ul>li {
     white-space: nowrap;
     padding: 10px 0 10px 28px;
   }
@@ -343,7 +369,7 @@ section {
     margin-left: 5px;
   }
 
-  .navbar > ul > li > a:before {
+  .navbar>ul>li>a:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -357,7 +383,7 @@ section {
   }
 
   .navbar a:hover:before,
-  .navbar li:hover > a:before,
+  .navbar li:hover>a:before,
   .navbar .active:before {
     visibility: visible;
     width: 100%;
@@ -366,7 +392,7 @@ section {
   .navbar a:hover,
   .navbar .active,
   .navbar .active:focus,
-  .navbar li:hover > a {
+  .navbar li:hover>a {
     color: #000;
   }
 
@@ -403,11 +429,11 @@ section {
 
   .navbar .dropdown ul a:hover,
   .navbar .dropdown ul .active:hover,
-  .navbar .dropdown ul li:hover > a {
+  .navbar .dropdown ul li:hover>a {
     color: var(--color-primary);
   }
 
-  .navbar .dropdown:hover > ul {
+  .navbar .dropdown:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -419,7 +445,7 @@ section {
     visibility: hidden;
   }
 
-  .navbar .dropdown .dropdown:hover > ul {
+  .navbar .dropdown .dropdown:hover>ul {
     opacity: 1;
     top: 0;
     left: 100%;
@@ -432,12 +458,13 @@ section {
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover > ul {
+  .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
 }
 
 @media (min-width: 1280px) {
+
   .mobile-nav-show,
   .mobile-nav-hide {
     display: none;
@@ -494,7 +521,7 @@ section {
   }
 
   .navbar a:hover,
-  .navbar li:hover > a {
+  .navbar li:hover>a {
     color: #000;
   }
 
@@ -514,8 +541,8 @@ section {
     border: 1px solid #eee;
   }
 
-  .navbar .dropdown > .dropdown-active,
-  .navbar .dropdown .dropdown > .dropdown-active {
+  .navbar .dropdown>.dropdown-active,
+  .navbar .dropdown .dropdown>.dropdown-active {
     display: block;
   }
 
@@ -620,10 +647,8 @@ section {
 .about .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(
-    var(--color-primary) 50%,
-    rgba(206, 18, 18, 0.4) 52%
-  );
+  background: radial-gradient(var(--color-primary) 50%,
+      rgba(206, 18, 18, 0.4) 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -1051,7 +1076,7 @@ section {
 }
 
 @media (min-width: 1200px) {
-  .events .swiper-slide-active + .swiper-slide {
+  .events .swiper-slide-active+.swiper-slide {
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     border-right: 1px solid rgba(255, 255, 255, 0.5);
     z-index: 1;
@@ -1405,7 +1430,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
