@@ -1649,3 +1649,29 @@ section {
 .footer .credits a {
   color: #fff;
 }
+
+
+/*--------------------------------------------------------------
+# qualification
+--------------------------------------------------------------*/
+.qualification-item {
+  text-align: center; /* Center the text */
+}
+
+.qualification-img {
+  width: 100%; /* Ensure images take full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 300px; /* Set a maximum width for consistency */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+.qualificationlabel {
+  margin-top: 10px; /* Add some space between the image and the text */
+  font-weight: bold; /* Make the text bold for better visibility */
+}
+.section-description {
+  margin-bottom: 20px; /* Add some space between the description and the content */
+  font-size: 16px; /* Adjust the font size as needed */
+  line-height: 1.6; /* Improve readability with line height */
+  color: #333; /* Set a color for the text */
+}
