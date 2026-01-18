@@ -1675,3 +1675,63 @@ section {
   line-height: 1.6; /* Improve readability with line height */
   color: #333; /* Set a color for the text */
 }
+
+/* --- Meal samples: normalize transparent images --- */
+.menu .menu-item .glightbox {
+  display: block;
+}
+
+.menu .menu-item .menu-img {
+  width: 100%;
+  height: 260px;              /* pick the height you want */
+  object-fit: contain;        /* key for transparent PNGs */
+  object-position: center;
+  display: block;
+
+  background: #fff;           /* so transparent areas look consistent */
+  padding: 14px;              /* gives breathing room around the food */
+  border-radius: 14px;        /* optional, matches modern card vibe */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06); /* optional */
+}
+
+/* Keep titles/prices aligned across cards */
+.menu .menu-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menu .menu-item .ingredients {
+  margin-top: 14px;
+  flex-grow: 1;               /* makes price line up across items */
+}
+
+.menu .menu-item .price {
+  margin-top: 10px;
+}
+
+/* Smaller, regular, readable copy under section headers */
+.section-header .section-subtext{
+  font-size: 0.95rem;      /* smaller than .lead */
+  font-weight: 400;        /* regular */
+  line-height: 1.55;
+  color: rgba(33,37,41,0.85); /* readable but softer than pure black */
+  max-width: 820px;        /* prevents long line fatigue */
+  margin-left: auto;
+  margin-right: auto;      /* centers under the header */
+}
+/* Normal readable copy under section headers */
+.section-header .section-copy{
+  max-width: 860px;
+  margin: 10px auto 0;
+  text-align: center;           /* match the title alignment */
+}
+
+.section-header .section-copy p{
+  font-family: var(--font-default); /* normal site font */
+  font-size: 1.05rem;               /* slightly bigger */
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(33, 37, 41, 0.88);
+  margin-bottom: 0.6rem;
+}
