@@ -1490,7 +1490,8 @@ section {
   padding: 160px 0 60px 0;
 }
 
-.hero h2 {
+.hero h2,
+.hero .hero-title {
   font-size: 64px;
   font-weight: 700;
   margin-bottom: 20px;
