@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -53,7 +53,7 @@
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="mb-space">
   <a class="visually-hidden-focusable" href="#main">Skip to main content</a>
 
   <header id="header" class="header fixed-top d-flex align-items-center">
@@ -124,6 +124,149 @@
           </div>
 
           <div class="accordion-item">
+            <h3 class="accordion-header" id="faqOrderHow">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapseOrderHow" aria-expanded="false" aria-controls="faqCollapseOrderHow">
+                How do I place an order?
+              </button>
+            </h3>
+            <div id="faqCollapseOrderHow" class="accordion-collapse collapse" aria-labelledby="faqOrderHow"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Download the MealBets app, create an account, and order directly in the app.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqCancelOrder">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapseCancelOrder" aria-expanded="false" aria-controls="faqCollapseCancelOrder">
+                How do I cancel an order?
+              </button>
+            </h3>
+            <div id="faqCollapseCancelOrder" class="accordion-collapse collapse" aria-labelledby="faqCancelOrder"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Go to <strong>My Orders &gt; Upcoming</strong> in the app. The latest cancellation time is
+                <strong>2:00 PM</strong> on the day before delivery. After the cutoff, orders can’t be changed.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqAllergyNotes">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapseAllergyNotes" aria-expanded="false" aria-controls="faqCollapseAllergyNotes">
+                Can I request ingredient changes for allergies or preferences?
+              </button>
+            </h3>
+            <div id="faqCollapseAllergyNotes" class="accordion-collapse collapse" aria-labelledby="faqAllergyNotes"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                At this time, we’re unable to accommodate custom ingredient requests, as meals are prepared in batches. 
+                <br>However, each meal’s <strong>Details</strong> section clearly lists the main ingredients and dietary restrictions. 
+                <br>Please choose the options that best meet your child’s needs. 
+                <br>If you have any questions, our support team is happy to help confirm ingredient information.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqSizes">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapseSizes" aria-expanded="false" aria-controls="faqCollapseSizes">
+                What’s the difference between meal sizes?
+              </button>
+            </h3>
+            <div id="faqCollapseSizes" class="accordion-collapse collapse" aria-labelledby="faqSizes"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p class="mb-2">All meals are prepared following strict standard operating procedures (SOPs).</p>
+                <ul>
+                  <li>Asian Cuisine &amp; World’s Flavours meals are portioned by weight (Protein, vegetables, and carbohydrates are scaled proportionally for each size.):</li>
+                </ul>
+                <ul class="ms-3">
+                  <li>XS: 260g</li>
+                  <li>S: 350g</li>
+                  <li>L: 450g</li>
+                  <li>XL: 550g</li>
+                </ul>
+                <ul>
+                  <li>Prime Sushi meals are portioned by piece count:</li>
+                </ul>
+                <ul class="ms-3">
+                  <li>Handrolls: quantity is shown by the number of rolls (1 roll = 4 sushi pieces)</li>
+                  <li>Sushi roll sets: the total number of sushi pieces is clearly specified</li>
+                </ul>
+                <p class="mb-0">This ensures consistent portions and balanced meals across all sizes.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqPricing">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapsePricing" aria-expanded="false" aria-controls="faqCollapsePricing">
+                How much does it cost?
+              </button>
+            </h3>
+            <div id="faqCollapsePricing" class="accordion-collapse collapse" aria-labelledby="faqPricing"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Pricing varies by meal and size, starting from $7.49. All prices are shown in the app.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqMealTypes">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapseMealTypes" aria-expanded="false" aria-controls="faqCollapseMealTypes">
+                What meal options are available?
+              </button>
+            </h3>
+            <div id="faqCollapseMealTypes" class="accordion-collapse collapse" aria-labelledby="faqMealTypes"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                We currently offer five categories: Asian Cuisine, World's Flavors, Prime Sushi, Burger/Sandwich, and Full Meals. More
+                options will be added over time.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqMenuView">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapseMenuView" aria-expanded="false" aria-controls="faqCollapseMenuView">
+                Can I see the menu in advance?
+              </button>
+            </h3>
+            <div id="faqCollapseMenuView" class="accordion-collapse collapse" aria-labelledby="faqMenuView"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes. Menus change daily/weekly/monthly, and the menu is available in the app. New items are keeping being developed and added to enrich our menu.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="faqPickup">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapsePickup" aria-expanded="false" aria-controls="faqCollapsePickup">
+                How does my child pick up their lunch?
+              </button>
+            </h3>
+            <div id="faqCollapsePickup" class="accordion-collapse collapse" aria-labelledby="faqPickup"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                JK/SK students typically have teacher assistance. Other grades usually pick up at the lunch table.
+                <br>Each box is labeled with the <strong>Meal Note</strong> you create in the app, including student’s grade, full name, and teacher's name.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
             <h3 class="accordion-header" id="faqSchools">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseSchools" aria-expanded="false" aria-controls="faqCollapseSchools">
@@ -133,7 +276,7 @@
             <div id="faqCollapseSchools" class="accordion-collapse collapse" aria-labelledby="faqSchools"
               data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Since May 2024, we have been serving over 400 schools and are onboarding more schools across Toronto and the
+                Since May 2024, we have been serving over 40 schools and are onboarding more schools across Toronto and the
                 GTA.
               </div>
             </div>
@@ -201,21 +344,6 @@
           </div>
 
           <div class="accordion-item">
-            <h3 class="accordion-header" id="faqVariety">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#faqCollapseVariety" aria-expanded="false" aria-controls="faqCollapseVariety">
-                What cuisines are available?
-              </button>
-            </h3>
-            <div id="faqCollapseVariety" class="accordion-collapse collapse" aria-labelledby="faqVariety"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                We offer a variety of cuisines, including World's Cuisine, Asian Flavour, Prime Sushi, Deluxe Full Meal, and Burger/Sandwich options.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
             <h3 class="accordion-header" id="faqSchoolSupport">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseSchoolSupport" aria-expanded="false" aria-controls="faqCollapseSchoolSupport">
@@ -225,7 +353,8 @@
             <div id="faqCollapseSchoolSupport" class="accordion-collapse collapse" aria-labelledby="faqSchoolSupport"
               data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Very little. Our automated system handles ordering, and we provide a web portal so school admins can
+                Very little. Our automated system handles ordering, order changes, SMS and email notification, customer support to users. 
+                <br>And we provide a web portal so school admins can
                 monitor all the information about delivery and orders. The supervisison is very easy.
               </div>
             </div>
@@ -257,7 +386,7 @@
               data-bs-parent="#faqAccordion">
               <div class="accordion-body">
                 Meals are delivered by our trained in-house drivers, right before lunch. Each box is labeled with the
-                student's grade, name, and teacher, and parents receive an automated SMS delivery confirmation.
+                student's grade, full name, and teacher's name, and parents receive an automated SMS delivery confirmation.
               </div>
             </div>
           </div>
@@ -287,7 +416,7 @@
             <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo"
               data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                The Services are intended for parents of K12 students to order lunch for their children, summer/winter/March camps to order for their campers, or office users to order to supported offices.
+                The services are intended for parents of K12 students to order lunch for their children, summer/winter/March camps to order for their campers, or office users to order to supported offices.
               </div>
             </div>
           </div>
@@ -317,22 +446,22 @@
             <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqFour"
               data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Visa, Mastercard, and American Express. Charges are in Canadian dollars. For school meals, there will be no HST charge, but for meals consumed in camps, companies, resident pickup locations, applicable taxes may apply.
+                Visa, Mastercard, and American Express. Charges are in Canadian dollars.
               </div>
             </div>
           </div>
 
           <div class="accordion-item">
-            <h3 class="accordion-header" id="faqSix">
+            <h3 class="accordion-header" id="faqHst">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
-                Can I change or cancel an order?
+                data-bs-target="#faqCollapseHst" aria-expanded="false" aria-controls="faqCollapseHst">
+                Do you charge HST/GST?
               </button>
             </h3>
-            <div id="faqCollapseSix" class="accordion-collapse collapse" aria-labelledby="faqSix"
+            <div id="faqCollapseHst" class="accordion-collapse collapse" aria-labelledby="faqHst"
               data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Orders can be changed or canceled before 2:00 PM on the day before the scheduled delivery date.
+                For school meals—including public, Catholic, and private schools—no HST is charged. For meals provided at camps, workplaces, or residential pickup locations, applicable taxes may apply.
               </div>
             </div>
           </div>
@@ -371,7 +500,7 @@
         <div class="text-center mt-5">
           <p class="mb-1"><strong>Need help?</strong></p>
           <p class="mb-0">
-            Email <a href="mailto:support@mealbets.com">support@mealbets.com</a> or call
+            Email <a href="mailto:support@mealbets.com">hi@mealbets.com</a> or call
             <a href="tel:+16473346688">+1 647-334-6688</a>, we also have social media support channels that you can find in the APP.
           </p>
         </div>
