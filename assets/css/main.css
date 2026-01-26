@@ -58,6 +58,16 @@ h6 {
   font-family: var(--font-secondary);
 }
 
+.mb-space h1,
+.mb-space h2,
+.mb-space h3,
+.mb-space h4,
+.mb-space h5,
+.mb-space h6,
+.mb-space .section-header p {
+  font-family: "Space Grotesk", var(--font-secondary);
+}
+
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
