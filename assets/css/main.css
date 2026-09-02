@@ -1509,6 +1509,13 @@ section {
   font-family: var(--font-primary);
 }
 
+.hero .hero-title {
+  font-size: 54px;
+  font-family: "Space Grotesk", var(--font-secondary);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
 .hero h2 span {
   color: var(--color-primary);
 }
@@ -1563,6 +1570,10 @@ section {
 @media (max-width: 640px) {
   .hero h2 {
     font-size: 36px;
+  }
+
+  .hero .hero-title {
+    font-size: 34px;
   }
 
   .hero .btn-get-started,
