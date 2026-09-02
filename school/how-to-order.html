@@ -80,6 +80,55 @@
             font-weight: 700;
         }
 
+        .mb-promo-code {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-width: 420px;
+            margin: 1.5rem auto 0;
+            padding: 0.875rem 1.25rem;
+            background: #fff7f2;
+            border: 1px dashed #F06A23;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .mb-promo-code strong {
+            color: #ce1212;
+            font-size: 1.15rem;
+            letter-spacing: 0.08em;
+        }
+
+        .mb-copy-promo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            padding: 0;
+            border: 0;
+            border-radius: 8px;
+            background: #ce1212;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .mb-copy-promo:hover,
+        .mb-copy-promo:focus-visible {
+            background: #a90f0f;
+        }
+
+        .mb-copy-promo:active {
+            transform: scale(0.94);
+        }
+
+        .mb-copy-promo.is-copied {
+            background: #198754;
+        }
+
         .mb-menu-actions .btn {
             min-width: 190px;
             padding: 10px 24px;
@@ -272,6 +321,16 @@
                             <li>Add to cart and pay. Review <span class="mb-bgps-highlight">My Orders</span> to confirm
                                 everything is correct. If you have issue on ordering, contact us ASAP.</li>
                         </ul>
+
+                        <!-- Temporary promotion -->
+                        <aside class="mb-promo-code" aria-label="Promotional code">
+                            <span>Use invite code <strong id="promo-code">MBBACK26</strong> to register.</span>
+                            <button class="mb-copy-promo" type="button" data-copy-promo="MBBACK26"
+                                aria-label="Copy promo code" title="Copy promo code">
+                                <i class="bi bi-copy" aria-hidden="true"></i>
+                            </button>
+                            <span id="promo-copy-status" class="visually-hidden" aria-live="polite"></span>
+                        </aside>
                     </div>
                 </div>
             </div>
@@ -383,6 +442,44 @@
     <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="../assets/vendor/php-email-form/validate.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script>
+        const promoCopyButton = document.querySelector("[data-copy-promo]");
+
+        promoCopyButton?.addEventListener("click", async () => {
+            const promoCode = promoCopyButton.dataset.copyPromo;
+            const status = document.getElementById("promo-copy-status");
+            const icon = promoCopyButton.querySelector("i");
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(promoCode);
+                } else {
+                    const textArea = document.createElement("textarea");
+                    textArea.value = promoCode;
+                    textArea.style.position = "fixed";
+                    textArea.style.opacity = "0";
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand("copy");
+                    textArea.remove();
+                }
+
+                icon.className = "bi bi-check-lg";
+                promoCopyButton.classList.add("is-copied");
+                promoCopyButton.setAttribute("aria-label", "Promo code copied");
+                status.textContent = "Promo code copied.";
+
+                window.setTimeout(() => {
+                    icon.className = "bi bi-copy";
+                    promoCopyButton.classList.remove("is-copied");
+                    promoCopyButton.setAttribute("aria-label", "Copy promo code");
+                    status.textContent = "";
+                }, 2000);
+            } catch (error) {
+                status.textContent = "Unable to copy the promo code.";
+            }
+        });
+    </script>
 </body>
 
 </html>

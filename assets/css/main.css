@@ -1525,6 +1525,33 @@ section {
   font-weight: 400;
 }
 
+.hero .hero-promo {
+  max-width: 540px;
+  padding: 12px 16px;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 4px 16px rgba(55, 55, 63, 0.08);
+}
+
+.hero .hero-promo i,
+.hero .hero-promo a,
+.hero .hero-promo strong:last-child {
+  color: var(--color-primary);
+}
+
+.hero .hero-promo i {
+  margin-right: 4px;
+}
+
+.hero .hero-promo a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .hero .btn-join-the-trial {
   font-weight: 500;
   font-size: 14px;
