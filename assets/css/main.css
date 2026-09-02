@@ -1509,6 +1509,13 @@ section {
   font-family: var(--font-primary);
 }
 
+.hero .hero-title {
+  font-size: 54px;
+  font-family: "Space Grotesk", var(--font-secondary);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
 .hero h2 span {
   color: var(--color-primary);
 }
@@ -1516,6 +1523,33 @@ section {
 .hero p {
   color: #4f4f5a;
   font-weight: 400;
+}
+
+.hero .hero-promo {
+  max-width: 540px;
+  padding: 12px 16px;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 4px 16px rgba(55, 55, 63, 0.08);
+}
+
+.hero .hero-promo i,
+.hero .hero-promo a,
+.hero .hero-promo strong:last-child {
+  color: var(--color-primary);
+}
+
+.hero .hero-promo i {
+  margin-right: 4px;
+}
+
+.hero .hero-promo a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .hero .btn-join-the-trial {
@@ -1563,6 +1597,10 @@ section {
 @media (max-width: 640px) {
   .hero h2 {
     font-size: 36px;
+  }
+
+  .hero .hero-title {
+    font-size: 34px;
   }
 
   .hero .btn-get-started,
