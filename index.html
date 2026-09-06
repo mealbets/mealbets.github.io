@@ -67,24 +67,85 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "MealBets",
-      "url": "https://mealbets.com",
-      "logo": "https://mealbets.com/favicon.png",
-      "contactPoint": [
+      "@graph": [
         {
-          "@type": "ContactPoint",
+          "@type": "WebSite",
+          "@id": "https://mealbets.com/#website",
+          "url": "https://mealbets.com/",
+          "name": "MealBets",
+          "publisher": { "@id": "https://mealbets.com/#organization" },
+          "inLanguage": "en-CA"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://mealbets.com/#organization",
+          "name": "MealBets Technologies Inc.",
+          "alternateName": "MealBets",
+          "url": "https://mealbets.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://mealbets.com/assets/images/logo_mealbets_black.png"
+          },
           "telephone": "+1-437-766-6808",
-          "contactType": "customer service",
-          "areaServed": "CA",
-          "availableLanguage": ["English", "Chinese"]
+          "email": "hi@mealbets.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "747 Don Mills Rd.",
+            "addressLocality": "North York",
+            "addressRegion": "ON",
+            "postalCode": "M3C 1T2",
+            "addressCountry": "CA"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-437-766-6808",
+            "email": "hi@mealbets.com",
+            "contactType": "customer service",
+            "areaServed": "GTA",
+            "availableLanguage": ["English", "Chinese"]
+          },
+          "sameAs": [
+            "https://twitter.com/mealbets",
+            "https://www.facebook.com/mealbets",
+            "https://www.instagram.com/mealbets",
+            "https://www.linkedin.com/company/mealbets"
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mealbets.com/#school-lunch-delivery",
+          "name": "School Lunch Ordering and Delivery",
+          "description": "Fresh school lunches ordered through the MealBets app and delivered to participating schools with no service or delivery fees.",
+          "provider": { "@id": "https://mealbets.com/#organization" },
+          "url": "https://mealbets.com/",
+          "serviceType": "School lunch delivery",
+          "areaServed": [
+            { "@type": "City", "name": "Toronto" },
+            { "@type": "City", "name": "North York" },
+            { "@type": "City", "name": "Scarborough" },
+            { "@type": "City", "name": "Markham" },
+            { "@type": "City", "name": "Richmond Hill" }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "7.99",
+            "priceCurrency": "CAD",
+            "description": "School lunch meals starting at $7.99; current pricing varies by meal and size."
+          }
+        },
+        {
+          "@type": "MobileApplication",
+          "@id": "https://mealbets.com/#app",
+          "name": "MealBets",
+          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "iOS, Android",
+          "publisher": { "@id": "https://mealbets.com/#organization" },
+          "url": "https://mealbets.com/download.html",
+          "sameAs": [
+            "https://apps.apple.com/app/mealbets/id6473510220",
+            "https://play.google.com/store/apps/details?id=com.mealbets.user"
+          ]
         }
-      ],
-      "sameAs": [
-        "https://twitter.com/mealbets",
-        "https://www.facebook.com/mealbets",
-        "https://www.instagram.com/mealbets",
-        "https://www.linkedin.com/company/mealbets"
       ]
     }
   </script>
