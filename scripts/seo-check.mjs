@@ -49,6 +49,21 @@ for (const url of sitemapUrls) {
   assert.ok(!/<meta\s+name=["']robots["'][^>]*noindex/i.test(html), `${relativeFile}: sitemap page is noindex`);
   assert.ok(!html.includes('https://www.mealbets.com'), `${relativeFile}: found a non-canonical www URL`);
 
+  const htmlWithoutComments = html.replace(/<!--[\s\S]*?-->/g, '');
+  for (const match of htmlWithoutComments.matchAll(/(?:href|src)=["']([^"']+)["']/gi)) {
+    const reference = match[1].replaceAll('&amp;', '&');
+    if (/^(?:#|mailto:|tel:|data:|javascript:)/i.test(reference)) continue;
+
+    const resolved = new URL(reference, url);
+    if (resolved.origin !== canonicalOrigin) continue;
+
+    const linkedFile = localFileFor(resolved.href);
+    assert.ok(
+      fs.existsSync(linkedFile),
+      `${relativeFile}: local reference does not exist: ${reference}`
+    );
+  }
+
   for (const [index, match] of [...html.matchAll(/<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/gi)].entries()) {
     try {
       JSON.parse(match[1]);
