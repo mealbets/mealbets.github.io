@@ -85,7 +85,8 @@ section {
   padding-bottom: 30px;
 }
 
-.section-header h2 {
+.section-header h2,
+.section-header .section-kicker {
   font-size: 13px;
   letter-spacing: 1px;
   font-weight: 400;
@@ -93,6 +94,10 @@ section {
   padding: 0;
   color: #7f7f90;
   text-transform: uppercase;
+  font-family: var(--font-default);
+}
+
+.section-header .section-kicker {
   font-family: var(--font-default);
 }
 
@@ -104,6 +109,17 @@ section {
 }
 
 .section-header p span {
+  color: var(--color-primary);
+}
+
+.section-header .page-title {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 400;
+  font-family: var(--font-primary);
+}
+
+.section-header .page-title span {
   color: var(--color-primary);
 }
 
