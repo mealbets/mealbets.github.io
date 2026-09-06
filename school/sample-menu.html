@@ -216,6 +216,16 @@
   .contact p, .note p { margin: 0 0 4px; }
   .note strong { display: block; font-size: 10.5px; margin-top: 4px; }
   .approved { text-align: right; }
+  .screen-nav {
+    width: 8.5in;
+    margin: 12px auto;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .screen-nav a { color: #c71f25; }
   .chips { display: flex; gap: 8px; justify-content: flex-end; }
   .chip {
     border: 1px solid #d1d5db;
@@ -227,6 +237,7 @@
   @media print {
     body { background: #fff; }
     .page { margin: 0; box-shadow: none; }
+    .screen-nav { display: none; }
   }
 </style>
 </head>
@@ -235,11 +246,16 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGPR8XCR"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<nav class="screen-nav" aria-label="Page navigation">
+  <a href="/">Home</a>
+  <a href="/school/how-to-order.html">How to Order</a>
+  <a href="/faq.html">Q&amp;A</a>
+</nav>
 <div class="page">
   <header class="top">
   <div>
     <div class="brand">
-      <a href="../index.html" aria-label="MealBets home">
+      <a href="/" aria-label="MealBets home">
         <img
           src="https://mealbets.com/assets/images/logo_mealbets_black.png"
           alt="MealBets Logo"
