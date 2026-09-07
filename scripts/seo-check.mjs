@@ -76,8 +76,7 @@ for (const url of sitemapUrls) {
 const utilityPages = [
   'download.html',
   'inf-download.html',
-  'sample-inner-page.html',
-  'school/flyer.html'
+  'sample-inner-page.html'
 ];
 
 for (const relativeFile of utilityPages) {
