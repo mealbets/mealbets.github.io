@@ -27,8 +27,13 @@ curl -I https://mealbets.com/school/sample-menu.html?utm_source=test
 
 The first request should return `301` with a `Location` on `https://mealbets.com`; the second should return the page normally.
 
+## Browser-side fallback
+
+If the CloudFront Function is not deployed, every HTML page loads [`assets/js/canonical-host.js`](../../assets/js/canonical-host.js). In a browser, it redirects `www.mealbets.com` to `https://mealbets.com` with `window.location.replace()` and preserves the path, query string, and anchor.
+
+This fallback provides a consistent experience for visitors, but it does not issue an HTTP `301`. It cannot redirect non-HTML files, requests with JavaScript disabled, or crawlers that do not render JavaScript. Keep the CloudFront Function as the preferred SEO implementation when possible.
+
 ## Related configuration
 
 - [Correct 404 responses](404-errors.md)
 - [Caching and compression](caching-compression.md)
-
