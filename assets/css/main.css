@@ -12,11 +12,11 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+  --font-default: "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-primary: "Amatic SC", sans-serif;
-  --font-secondary: "Inter", sans-serif;
+  --font-primary: "Nunito Sans", sans-serif;
+  --font-secondary: "Nunito Sans", sans-serif;
 }
 
 /* Colors */
@@ -37,6 +37,8 @@
 body {
   font-family: var(--font-default);
   color: var(--color-default);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -65,7 +67,7 @@ h6 {
 .mb-space h5,
 .mb-space h6,
 .mb-space .section-header p {
-  font-family: "Space Grotesk", var(--font-secondary);
+  font-family: var(--font-secondary);
 }
 
 /*--------------------------------------------------------------
@@ -85,7 +87,8 @@ section {
   padding-bottom: 30px;
 }
 
-.section-header h2 {
+.section-header h2,
+.section-header .section-kicker {
   font-size: 13px;
   letter-spacing: 1px;
   font-weight: 400;
@@ -93,6 +96,10 @@ section {
   padding: 0;
   color: #7f7f90;
   text-transform: uppercase;
+  font-family: var(--font-default);
+}
+
+.section-header .section-kicker {
   font-family: var(--font-default);
 }
 
@@ -104,6 +111,17 @@ section {
 }
 
 .section-header p span {
+  color: var(--color-primary);
+}
+
+.section-header .page-title {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 400;
+  font-family: var(--font-primary);
+}
+
+.section-header .page-title span {
   color: var(--color-primary);
 }
 
@@ -1511,7 +1529,7 @@ section {
 
 .hero .hero-title {
   font-size: 54px;
-  font-family: "Space Grotesk", var(--font-secondary);
+  font-family: var(--font-secondary);
   line-height: 1.08;
   letter-spacing: -0.035em;
 }
