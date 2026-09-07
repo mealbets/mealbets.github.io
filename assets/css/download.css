@@ -1,0 +1,53 @@
+:root {
+  font-family: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #292623;
+  background: #fffaf5;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; }
+a { color: inherit; text-underline-offset: 4px; }
+a:focus-visible { outline: 3px solid #ce1212; outline-offset: 6px; border-radius: 4px; }
+.site-header, footer { width: min(1120px, calc(100% - 64px)); margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.site-header { padding-block: 32px; }
+.logo { display: block; width: 180px; height: auto; }
+.home-link { font-size: 14px; font-weight: 600; }
+main { width: min(1120px, calc(100% - 64px)); margin: auto; padding-block: 24px 48px; }
+.download-card { display: grid; grid-template-columns: 1.15fr 1fr; overflow: hidden; background: #fff; border: 1px solid #eee3d9; border-radius: 28px; box-shadow: 0 16px 60px #65412608; }
+.download-content { padding: 60px 48px; }
+.eyebrow { margin: 0 0 24px; color: #ad2924; font-size: 11px; font-weight: 800; letter-spacing: 1.8px; }
+h1 { margin: 0; font-size: clamp(36px, 4.2vw, 52px); letter-spacing: -2px; line-height: 1.1; }
+h1 span { color: #ce1212; }
+.intro { max-width: 430px; margin-block: 24px 32px; color: #655d57; font-size: 17px; line-height: 1.7; }
+h2 { font-size: 16px; margin: 0 0 16px; }
+.store-links { display: flex; flex-wrap: wrap; gap: 12px; }
+.store-link { display: inline-flex; border-radius: 6px; }
+.store-link:hover { opacity: .8; }
+.store-link svg { display: block; width: 162px; height: 48px; }
+.device-note { font-size: 13px; line-height: 1.65; color: #655d57; margin: 18px 0 28px; overflow-wrap: anywhere; }
+.device-note strong { font-weight: 600; }
+.return-note { border-top: 1px solid #eee3d9; padding-top: 22px; font-size: 13px; line-height: 1.6; }
+.return-note p { margin: 4px 0 0; color: #655d57; }
+.food-panel { background: #f5eadc; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; text-align: center; }
+.food-image { width: 100%; max-width: 270px; }
+.food-image img { width: 100%; height: auto; display: block; border-radius: 20px; box-shadow: 0 18px 30px #67402118; }
+.food-caption { font-size: 23px; font-weight: 750; letter-spacing: -.6px; margin: 32px 0 8px; }
+.food-detail { font-size: 14px; color: #655d57; margin: 0; }
+footer { padding-bottom: 28px; color: #655d57; font-size: 12px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 24px; }
+@media (max-width: 760px) {
+  .site-header, main, footer { width: calc(100% - 32px); }
+  .site-header { padding-block: 24px; }
+  .logo { width: 140px; }
+  .home-link { font-size: 12px; }
+  main { padding-block: 8px 32px; }
+  .download-card { grid-template-columns: 1fr; border-radius: 20px; }
+  .download-content { padding: 36px 24px; }
+  h1 { letter-spacing: -1.4px; }
+  .intro { font-size: 16px; }
+  .food-panel { padding: 28px 24px; }
+  .food-image { max-width: 230px; }
+  .food-caption { margin-top: 20px; font-size: 21px; }
+  footer { flex-direction: column; gap: 16px; }
+}
