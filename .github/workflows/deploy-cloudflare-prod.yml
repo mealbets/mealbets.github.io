@@ -26,6 +26,14 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Check indexing and crawler access
+        run: node scripts/seo-check.mjs
+
       - name: Prepare public website files
         shell: bash
         run: |
