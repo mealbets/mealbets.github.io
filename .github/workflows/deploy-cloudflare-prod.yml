@@ -34,6 +34,9 @@ jobs:
       - name: Check indexing and crawler access
         run: node scripts/seo-check.mjs
 
+      - name: Check translation coverage
+        run: python3 scripts/i18n-check.py
+
       - name: Prepare public website files
         shell: bash
         run: |
