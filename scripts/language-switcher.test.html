@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-CA"><head><meta charset="utf-8"><title>Language switch tests</title>
+<script defer src="../assets/i18n/zh-hans.js"></script>
+<script defer src="../assets/js/language-switcher.js"></script>
+</head><body>
+<h1>Download the app</h1><p id="mixed">Download the <strong>MealBets</strong> app and create your account.</p>
+<input id="input" placeholder="Home" value="User-entered content">
+<button id="existing">Copy promo code</button><span id="dynamic"></span>
+<a id="internal" href="../faq.html?source=test#question">Q&amp;A</a>
+<a id="legal" href="../privacy-policy.html">Privacy Policy</a>
+<pre id="result" translate="no">RUNNING</pre>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const result = document.getElementById('result');
+  const assert = (value, message) => { if (!value) throw new Error(message); };
+  const pause = () => new Promise(resolve => setTimeout(resolve, 30));
+  const choose = code => document.querySelector(`[data-language="${code}"]`).click();
+  try {
+    choose('en-CA');
+    const mixed = document.getElementById('mixed');
+    const original = mixed.innerHTML;
+    const input = document.getElementById('input');
+    input.value = 'Keep my input';
+    let clicks = 0;
+    document.getElementById('existing').addEventListener('click', () => clicks++);
+    choose('zh-Hans');
+    assert(document.documentElement.lang === 'zh-Hans', 'Chinese lang attribute');
+    assert(document.querySelector('h1').textContent === '下载应用', 'Chinese content');
+    assert(input.placeholder === '首页' && input.value === 'Keep my input', 'Attribute translation preserves input');
+    assert(mixed.querySelector('strong').textContent === 'MealBets', 'Inline markup preserved');
+    document.getElementById('existing').click();
+    assert(clicks === 1, 'Existing handlers preserved');
+    document.getElementById('dynamic').textContent = 'Promo code copied.';
+    await pause();
+    assert(document.getElementById('dynamic').textContent === '优惠码已复制。', 'Dynamic text translated');
+    const legalHref = document.getElementById('legal').getAttribute('href');
+    document.addEventListener('click', event => event.preventDefault(), {once:true});
+    document.getElementById('internal').click();
+    const url = new URL(document.getElementById('internal').href);
+    assert(url.searchParams.get('lang') === 'zh-Hans' && url.searchParams.get('source') === 'test' && url.hash === '#question', 'Language link preserves query and hash');
+    assert(document.getElementById('legal').getAttribute('href') === legalHref, 'Legal link unchanged');
+    choose('en-CA');
+    assert(mixed.innerHTML === original, 'Exact English restoration');
+    assert(input.placeholder === 'Home' && input.value === 'Keep my input', 'English attributes restored');
+    assert(document.getElementById('dynamic').textContent === 'Promo code copied.', 'Dynamic English restored');
+    for (let i=0;i<5;i++) { choose('zh-Hans'); choose('en-CA'); }
+    assert(mixed.innerHTML === original, 'Repeated switching stable');
+    result.textContent = 'PASS: translation, restoration, dynamic content, attributes, input, handlers, links and repeated switching';
+  } catch (error) { result.textContent = 'FAIL: '+error.message; }
+});
+</script></body></html>

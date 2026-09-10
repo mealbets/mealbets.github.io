@@ -1,4 +1,9 @@
+# Allow search and AI crawlers to discover public content.
+# The wildcard covers all crawlers; separate AI bot Allow rules are unnecessary.
+# Keep utility pages out of search with HTML noindex, not Disallow, so crawlers
+# can read their indexing directives.
 User-agent: *
 Allow: /
 
+# Canonical public pages for discovery.
 Sitemap: https://mealbets.com/sitemap.xml

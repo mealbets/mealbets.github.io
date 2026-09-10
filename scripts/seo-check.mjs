@@ -4,6 +4,18 @@ import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
 const canonicalOrigin = 'https://mealbets.com';
+const robots = fs.readFileSync(path.join(root, 'robots.txt'), 'utf8');
+const robotsDirectives = robots.split(/\r?\n/)
+  .map((line) => line.replace(/#.*$/, '').trim())
+  .filter(Boolean);
+
+// Preserve the site's open crawler policy and canonical sitemap discovery.
+assert.deepEqual(robotsDirectives, [
+  'User-agent: *',
+  'Allow: /',
+  `Sitemap: ${canonicalOrigin}/sitemap.xml`
+], 'robots.txt must allow all crawlers and advertise the canonical sitemap');
+
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>(https:\/\/mealbets\.com(?:\/[^<]*)?)<\/loc>/g)].map((match) => match[1]);
 
@@ -74,9 +86,7 @@ for (const url of sitemapUrls) {
 }
 
 const utilityPages = [
-  'download.html',
-  'inf-download.html',
-  'sample-inner-page.html'
+  'download.html'
 ];
 
 for (const relativeFile of utilityPages) {

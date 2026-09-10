@@ -1,0 +1,22 @@
+.mb-has-language-switcher { padding-bottom: 70px; }
+.mb-language-switcher {
+  position: fixed; bottom: max(16px, env(safe-area-inset-bottom)); left: 16px;
+  z-index: 9999; display: flex; align-items: center; gap: 4px;
+  padding: 5px; border: 1px solid #ddd; border-radius: 999px;
+  background: #fff; color: #222; box-shadow: 0 4px 20px #0002;
+  font: 600 13px/1.4 system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.mb-language-switcher > span:first-child { padding: 0 8px; }
+.mb-language-switcher button {
+  appearance: none; margin: 0; border: 0; border-radius: 999px;
+  padding: 10px 14px; min-height: 44px; background: transparent;
+  color: #222; font: inherit; cursor: pointer;
+}
+.mb-language-switcher button[aria-pressed="true"] { background: #222; color: #fff; }
+.mb-language-switcher button:focus-visible { outline: 3px solid #ce1212; outline-offset: 2px; }
+.mb-language-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+html[lang="zh-Hans"] { --font-default: "Nunito Sans", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; --font-primary: var(--font-default); --font-secondary: var(--font-default); }
+html[lang="zh-Hans"] body { font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+html[lang="zh-Hans"] p, html[lang="zh-Hans"] li { line-height: 1.7; }
+@media (max-width: 400px) { .mb-language-switcher { left: 8px; bottom: 8px; } }
+@media print { .mb-language-switcher { display: none !important; } .mb-has-language-switcher { padding-bottom: 0; } }
