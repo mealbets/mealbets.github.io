@@ -1,0 +1,6 @@
+# UTF-8 for HTML served directly by Cloudflare's static asset layer.
+/
+  Content-Type: text/html; charset=utf-8
+
+/*.html
+  Content-Type: text/html; charset=utf-8
