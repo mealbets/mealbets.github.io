@@ -1751,22 +1751,27 @@ section {
   color: #333; /* Set a color for the text */
 }
 
-/* --- Meal samples: normalize transparent images --- */
+/* Keep meal cards aligned while preserving each image's intrinsic ratio. */
 .menu .menu-item .glightbox {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 260px;
+  padding: 14px;
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-.menu .menu-item .menu-img {
-  width: 100%;
-  height: 260px;              /* pick the height you want */
-  object-fit: contain;        /* key for transparent PNGs */
-  object-position: center;
+.menu .tab-content .menu-item .menu-img {
   display: block;
-
-  background: #fff;           /* so transparent areas look consistent */
-  padding: 14px;              /* gives breathing room around the food */
-  border-radius: 14px;        /* optional, matches modern card vibe */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06); /* optional */
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 /* Keep titles/prices aligned across cards */
