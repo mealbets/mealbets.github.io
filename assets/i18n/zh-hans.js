@@ -550,7 +550,7 @@ window.MEALBETS_ZH = {
   "✉ hi@mealbets.com": "✉ hi@mealbets.com",
   "🌐 mealbets.com": "🌐 mealbets.com",
   "💬 mealbets": "💬 mealbets",
-  "Art One Acadamy": "Art One Acadamy",
+  "Art One Academy": "Art One Academy",
   "Artnection Art Class": "Artnection Art Class",
   "Canada Chess Youth Club": "Canada Chess Youth Club",
   "Caution Tape Robotics": "Caution Tape Robotics",
