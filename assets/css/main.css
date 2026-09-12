@@ -735,7 +735,8 @@ section {
   color: #fff;
 }
 
-.why-us .why-box h3 {
+.why-us .why-box h3,
+.why-us .why-box .why-title {
   font-weight: 700;
   font-size: 34px;
   margin-bottom: 30px;
@@ -787,7 +788,8 @@ section {
   height: 64px;
 }
 
-.why-us .icon-box h4 {
+.why-us .icon-box h4,
+.why-us .icon-box .benefit-title {
   font-size: 20px;
   font-weight: 400;
   margin: 0 0 30px 0;
@@ -873,7 +875,8 @@ section {
   font-size: 48px;
 }
 
-.menu .nav-link h4 {
+.menu .nav-link h4,
+.menu .nav-link .location-tab-label {
   font-size: 18px;
   font-weight: 400;
   margin: 0;
@@ -881,7 +884,8 @@ section {
 }
 
 @media (max-width: 575px) {
-  .menu .nav-link h4 {
+  .menu .nav-link h4,
+.menu .nav-link .location-tab-label {
     font-size: 16px;
   }
 }
@@ -966,7 +970,8 @@ section {
   margin: 0 auto;
 }
 
-.testimonials .testimonial-item h3 {
+.testimonials .testimonial-item h3,
+.testimonials .testimonial-item .testimonial-name {
   font-size: 20px;
   font-weight: bold;
   margin: 10px 0 5px 0;
@@ -1162,7 +1167,8 @@ section {
   padding: 10px 15px 20px 15px;
 }
 
-.chefs .chef-member .member-info h4 {
+.chefs .chef-member .member-info h4,
+.chefs .chef-member .member-info .team-name {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
@@ -1385,7 +1391,8 @@ section {
   margin-right: 15px;
 }
 
-.contact .info-item h3 {
+.contact .info-item h3,
+.contact .info-item .contact-label {
   font-size: 20px;
   color: #6c757d;
   font-weight: 700;
@@ -1643,7 +1650,8 @@ section {
   line-height: 0;
 }
 
-.footer h4 {
+.footer h4,
+.footer .footer-label {
   font-size: 16px;
   font-weight: bold;
   position: relative;
@@ -1802,3 +1810,11 @@ section {
   color: rgba(33, 37, 41, 0.88);
   margin-bottom: 0.6rem;
 }
+
+/* Labels keep their visual emphasis without adding document headings. */
+.ordering-prompt,
+.delivery-title { font-size: 1.25rem; font-weight: 500; line-height: 1.2; margin-bottom: .5rem; }
+.contact .info-item .contact-label { font-size: 20px; line-height: 1.2; margin-bottom: 5px; }
+.footer .footer-label { line-height: 1.2; margin-bottom: .5rem; }
+.menu .nav-link .location-tab-label,
+.testimonials .testimonial-item .testimonial-name { line-height: 1.2; }
