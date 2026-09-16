@@ -582,5 +582,21 @@ window.MEALBETS_ZH = {
   "Colin": "Colin",
   "Promo code copied": "优惠码已复制",
   "Promo code copied.": "优惠码已复制。",
-  "Unable to copy the promo code.": "无法复制优惠码。"
+  "Unable to copy the promo code.": "无法复制优惠码。",
+  "Elementary / Primary Schools": "小学",
+  "High Schools": "高中",
+  "Wait for the pickup SMS.": "等待取餐短信。",
+  "The driver arrives at the scheduled delivery time. The system sends an automated SMS to the phone number on your MealBets account when the meal is ready for pickup.": "司机会按预定配送时间到达。餐食准备好领取后，系统会自动向您的 MealBets 账户所登记的手机号码发送取餐短信。",
+  "Find the MealBets vehicle outside.": "到校舍外寻找 MealBets 配送车辆。",
+  "Students can then come out of the school building and look for the vehicle with a clearly visible MealBets banner on its roof, as shown below. The vehicle normally parks in the same pickup location on each delivery day.": "收到通知后，学生可走出校舍，寻找车顶放有醒目 MealBets 标牌的车辆，如下图所示。车辆通常在每个配送日停靠于同一取餐地点。",
+  "Tell the driver your Meal Note.": "向司机告知您的 Meal Note（用餐备注）。",
+  "The driver will use it to identify your order and hand you your meal.": "司机会根据用餐备注核对订单，并将餐食交给您。",
+  "MealBets pickup vehicle outside a high school, with a MealBets banner on its roof": "高中校舍外的 MealBets 配送车辆，车顶设有 MealBets 标牌",
+  "Look for the MealBets banner on the vehicle’s roof at your school’s regular pickup location.": "请在学校固定取餐地点寻找车顶设有 MealBets 标牌的车辆。",
+  "After placing your order, open the": "下单后，请打开 MealBets 应用中的",
+  "Next": "Next",
+  "tab in the MealBets app to see the pickup location photo for your school.": "选项卡，查看您所在学校的取餐地点照片。",
+  "On time delivery with pickup SMS.": "准时配送，短信通知取餐。",
+  "How to find the picture for your school.": "如何查找您所在学校的取餐地点照片。",
+  "Use code in how to order page by": "使用“如何订餐”页面中的优惠码，有效期至"
 };

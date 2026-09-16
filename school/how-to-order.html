@@ -211,6 +211,37 @@
             line-height: 1.7;
         }
 
+        .mb-meal-pickup h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-high-school-pickup {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #cbd5e1;
+        }
+
+        .mb-pickup-steps {
+            padding-left: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .mb-pickup-steps li { margin-bottom: 0.75rem; }
+        .mb-pickup-photo { margin: 1rem 0 0; }
+        .mb-pickup-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .mb-pickup-photo figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #495057;
+        }
+
         .mb-lunch-support {
             display: flex;
             align-items: flex-start;
@@ -429,9 +460,27 @@
             <div class="container">
                 <div class="mb-meal-pickup">
                     <h2 id="meal-pickup-title">How Your Child Receives Their Meal 🍱</h2>
+                    <h3>Elementary / Primary Schools</h3>
                     <p>Unless your school gives you different instructions, ask your child to collect their MealBets order from the school's designated <strong>lunch drop-off table</strong>. This table is usually located in or just outside the school office.</p>
                     <p>Each meal is identified using the <strong>Meal Note</strong> saved with the order. Before ordering, confirm that it follows the format <strong>Grade – Teacher's Name – Child's Full Name</strong>. Accurate details help school staff match the right meal to the right student.</p>
                     <p class="mb-0"><strong>For JK/SK students:</strong> Younger children may need help recognizing their meal label. School staff typically use the Meal Note to help match and retrieve their order, so please review it carefully before checkout.</p>
+
+                    <div class="mb-high-school-pickup">
+                        <h3>High Schools</h3>
+                        <ol class="mb-pickup-steps">
+                            <li><strong>On time delivery with pickup SMS.</strong> The driver arrives at the scheduled delivery time. The system sends an automated SMS to the phone number on your MealBets account when the meal is ready for pickup.</li>
+                            <li><strong>Find the MealBets vehicle outside.</strong> Students can then come out of the school building and look for the vehicle with a clearly visible MealBets banner on its roof, as shown below. The vehicle normally parks in the same pickup location on each delivery day.
+                            </li>
+                            <li><strong>Tell the driver your Meal Note.</strong> The driver will use it to identify your order and hand you your meal.</li>
+                            <li><strong>How to find the picture for your school.</strong><p>After placing your order, open the <strong>Next</strong> tab in the MealBets app to see the pickup location photo for your school.</p></li>
+                        </ol>
+                        <figure class="mb-pickup-photo">
+                            <img src="../assets/images/mealpickup-highschool.webp"
+                                alt="MealBets pickup vehicle outside a high school, with a MealBets banner on its roof"
+                                width="1706" height="1279" loading="lazy" decoding="async">
+                            <figcaption>Look for the MealBets banner on the vehicle’s roof at your school’s regular pickup location.</figcaption>
+                        </figure>
+                    </div>
 
                     <aside class="mb-lunch-support" aria-labelledby="urgent-support-title">
                         <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
