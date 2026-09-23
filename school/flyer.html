@@ -31,6 +31,14 @@
         .card-shadow {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
+        /* 1 shows the full image; smaller values zoom out, larger values zoom in.
+           The surrounding image blocks keep their fixed height at every scale. */
+        .food-image {
+            object-fit: contain;
+            object-position: center;
+            transform: scale(var(--food-scale, 0.95));
+            transform-origin: center;
+        }
         @media print {
             html, body { display: none !important; }
         }
@@ -107,42 +115,42 @@
 
                 <div class="group">
                     <div class="h-36 bg-gray-200 rounded-2xl mb-2 overflow-hidden border border-gray-100 card-shadow">
-                        <img src="https://cdn.mealbets.com/image/695f428a08ca132b3b5559be?auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Asian Cuisine sample meal" class="w-full h-full object-cover">
+                        <img src="/assets/media/optimized/gallery/asian_sample.webp" alt="Asian Cuisine sample meal" class="food-image w-full h-full" style="--food-scale: 1.2">
                     </div>
                     <h3 class="font-bold text-center uppercase text-[11px] tracking-wide">Asian <br>Cuisine</h3>
                 </div>
 
                 <div class="group">
                     <div class="h-36 bg-gray-200 rounded-2xl mb-2 overflow-hidden border border-gray-100 card-shadow">
-                        <img src="https://cdn.mealbets.com/image/695f44344ac9412621fb14e9?auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="World's Flavors sample meal" class="w-full h-full object-cover">
+                        <img src="/assets/media/optimized/gallery/worlds_sample.webp" alt="World's Flavors sample meal" class="food-image w-full h-full" style="--food-scale: 1.4">
                     </div>
                     <h3 class="font-bold text-center uppercase text-[11px] tracking-wide">World's <br>Flavors</h3>
                 </div>
 
                 <div class="group">
                     <div class="h-36 bg-gray-200 rounded-2xl mb-2 overflow-hidden border border-gray-100 card-shadow">
-                        <img src="https://cdn.mealbets.com/image/695f47754ac9412621fb14ef?auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Prime Sushi sample meal" class="w-full h-full object-cover">
+                        <img src="/assets/media/optimized/gallery/sushi_sample.webp" alt="Prime Sushi sample meal" class="food-image w-full h-full" style="--food-scale: 1.2">
                     </div>
                     <h3 class="font-bold text-center uppercase text-[11px] tracking-wide">Prime <br>Sushi</h3>
                 </div>
 
                 <div class="group">
                     <div class="h-36 bg-gray-200 rounded-2xl mb-2 overflow-hidden border border-gray-100 card-shadow">
-                        <img src="https://cdn.mealbets.com/image/696549df7bf0965e5cb8f6c4?auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Deluxe Full Meal sample meal" class="w-full h-full object-cover">
+                        <img src="/assets/media/optimized/gallery/fullmeal_sample.webp" alt="Deluxe Full Meal sample meal" class="food-image w-full h-full" style="--food-scale: 1.5">
                     </div>
                     <h3 class="font-bold text-center uppercase text-[11px] tracking-wide">Deluxe <br>Full Meal</h3>
                 </div>
 
                 <div class="group">
                     <div class="h-36 bg-gray-200 rounded-2xl mb-2 overflow-hidden border-yellow-400 border-2 card-shadow">
-                        <img src="https://cdn.mealbets.com/image/696545ecd3466d6789bb5da4?auto=format&amp;fit=crop&amp;w=400&amp;get=400&amp;q=80" alt="Burger and sandwich sample meal" class="w-full h-full object-cover">
+                        <img src="/assets/media/optimized/gallery/burger_sample.webp" alt="Burger and sandwich sample meal" class="food-image w-full h-full" style="--food-scale: 1.1">
                     </div>
                     <h3 class="font-bold text-center uppercase text-[11px] tracking-wide text-yellow-600">Burger&amp;<br>Sandwich</h3>
                 </div>
 
                 <div class="group">
                     <div class="h-36 bg-gray-200 rounded-2xl mb-2 overflow-hidden border border-gray-100 card-shadow">
-                        <img src="/assets/media/optimized/gallery/wraps_sample.webp" alt="Wraps Delight sample meal" class="w-full h-full object-cover" width="900" height="900">
+                        <img src="/assets/media/optimized/gallery/wraps_sample.webp" alt="Wraps Delight sample meal" class="food-image w-full h-full" style="--food-scale: 1.4" width="900" height="900">
                     </div>
                     <h3 class="font-bold text-center uppercase text-[11px] tracking-wide">Wraps <br>Delight</h3>
                 </div>
@@ -172,7 +180,7 @@
                         <li class="flex items-start gap-2">✔ Background-Checked In-House Drivers</li>
                         <li class="flex items-start gap-2">✔ Clearly Labeled with Student Info</li>
                         <li class="flex items-start gap-2">✔ Order in APP with SMS Notification</li>
-                        <li class="flex items-start gap-2">✔ Serving 40+ Participating Schools</li>
+                        <li class="flex items-start gap-2">✔ Serving 50+ Participating Schools</li>
                     </ul>
                 </div>
             </div>
