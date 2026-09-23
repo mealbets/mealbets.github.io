@@ -627,7 +627,7 @@ window.MEALBETS_ZH = {
   "Nutrition for Growing Kids": "助力孩子成长的营养搭配",
   "Strict Food Safety & Quality Standards": "严格的食品安全与品质标准",
   "Reliable School Delivery": "可靠的校园配送",
-  "In-House, Background-Checked Drivers": "自有司机团队，均通过背景审查",
+  "In-House, Background-Checked Drivers": "自有司机团队，背景已审查",
   "Student Name-Labeled Meals": "餐食标注学生姓名",
   "App Ordering & SMS Updates": "应用订餐，短信通知",
   "Serving 50+ Partner Schools": "服务逾 50 所合作学校",
