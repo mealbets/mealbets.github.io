@@ -1,5 +1,8 @@
 // Maintained Simplified Chinese translations. Keys are normalized English text.
 window.MEALBETS_ZH = {
+  "App Store • Google Play": "App Store • Google Play",
+  "Bets": "Bets",
+  "Meal": "Meal",
   "School Lunch Delivery in Toronto & the GTA | MealBets": "多伦多及大多伦多地区校园午餐配送 | MealBets",
   "Skip to main content": "跳至主要内容",
   "MealBets home": "MealBets 首页",
