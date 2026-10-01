@@ -1,5 +1,6 @@
 // Maintained Simplified Chinese translations. Keys are normalized English text.
 window.MEALBETS_ZH = {
+  "Customer service hours: Monday–Friday, 8 AM–7 PM.": "客服时间：周一至周五，上午 8 点至晚上 7 点。",
   "App Store • Google Play": "App Store • Google Play",
   "Bets": "Bets",
   "Meal": "Meal",
