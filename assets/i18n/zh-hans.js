@@ -12,6 +12,7 @@ window.MEALBETS_ZH = {
   "For Schools": "学校合作",
   "How to Order": "如何订餐",
   "Sample Menu": "参考菜单",
+  "Start from": "起价",
   "Service Areas": "服务区域",
   "Food Safety": "食品安全",
   "Q&A": "常见问题",
