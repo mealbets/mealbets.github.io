@@ -187,9 +187,23 @@
     font-size: 7.5px;
     font-weight: 900;
   }
+  .price {
+    margin: 0 0 0 auto;
+    flex-shrink: 0;
+    text-align: right;
+    color: #111827;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 900;
+  }
+  .price-label {
+    display: block;
+    font-size: 9px;
+    font-weight: 700;
+  }
   .card-head {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 7px;
     padding: 7px 10px 3px;
   }
@@ -210,6 +224,8 @@
   .green { background: #4f8f20; }
   .yellow { background: #f59e0b; }
   .title {
+    min-width: 0;
+    overflow-wrap: anywhere;
     margin: 0;
     font-size: 17px;
     font-weight: 900;
@@ -386,7 +402,7 @@
   <main class="grid">
     <article class="card">
       <div class="photo" style="background-image:url('/assets/img/sample-menu-flyer-img/asian.webp');"><span class="sample">SAMPLE MEAL</span></div>
-      <div class="card-head"><div class="round orange">🍚</div><h3 class="title orange-text">Asian Cuisine</h3></div>
+      <div class="card-head"><div class="round orange">🍚</div><h3 class="title orange-text">Asian Cuisine</h3><p class="price"><span class="price-label">Start from</span>$7.99</p></div>
       <ol>
         <li>Steamed Rice with Braised Pork & Potato, Stir-Fried Choy Sum, and Soy-Braised Egg</li>
         <li>Taiwanese Braised Pork Rice with Tomato Cabbage and Braised Tofu</li>
@@ -398,7 +414,7 @@
 
     <article class="card">
       <div class="photo" style="background-image:url('/assets/img/sample-menu-flyer-img/worlds.webp');"><span class="sample">SAMPLE MEAL</span></div>
-      <div class="card-head"><div class="round teal">🌍</div><h3 class="title teal-text">World's Flavors</h3></div>
+      <div class="card-head"><div class="round teal">🌍</div><h3 class="title teal-text">World's Flavors</h3><p class="price"><span class="price-label">Start from</span>$7.99</p></div>
       <ol>
         <li>Classic Baked Penne</li>
         <li>Meat Sauce Pasta with Roasted Broccoli & Potatoes</li>
@@ -410,7 +426,7 @@
 
     <article class="card">
       <div class="photo" style="background-image:url('/assets/img/sample-menu-flyer-img/sushi.webp');"><span class="sample">SAMPLE MEAL</span></div>
-      <div class="card-head"><div class="round red">🍣</div><h3 class="title red-text">Prime Sushi</h3></div>
+      <div class="card-head"><div class="round red">🍣</div><h3 class="title red-text">Prime Sushi</h3><p class="price"><span class="price-label">Start from</span>$8.99</p></div>
       <ol>
         <li>Inari Sushi & California Roll Combo</li>
         <li>Tamago Sushi & Avocado Roll Combo</li>
@@ -423,7 +439,7 @@
 
     <article class="card">
       <div class="photo" style="background-image:url('/assets/img/sample-menu-flyer-img/fullmeal.webp');"><span class="sample">SAMPLE MEAL</span></div>
-      <div class="card-head"><div class="round green">🍱</div><h3 class="title green-text">Deluxe Full Meal</h3></div>
+      <div class="card-head"><div class="round green">🍱</div><h3 class="title green-text">Deluxe Full Meal</h3><p class="price">$13.99</p></div>
       <ol>
         <li>Taiwanese Popcorn Chicken with Rice, Stir-Fried Greens, Braised Egg & Mei Gan Cai</li>
         <li>Braised Pork Belly with Rice, Vegetables, Braised Egg & Greens</li>
@@ -435,7 +451,7 @@
 
     <article class="card">
       <div class="photo" style="background-image:url('/assets/img/sample-menu-flyer-img/burger.webp');"><span class="sample">SAMPLE MEAL</span></div>
-      <div class="card-head"><div class="round yellow">🍔</div><h3 class="title orange-text">Burger&amp;Sandwich</h3></div>
+      <div class="card-head"><div class="round yellow">🍔</div><h3 class="title orange-text">Burger&amp;Sandwich</h3><p class="price">$9.99</p></div>
       <ol>
         <li>Angus Beef Burger</li>
         <li>Honey Garlic Chicken Burger</li>
@@ -448,7 +464,7 @@
 
     <article class="card">
       <div class="photo" style="background-image:url('/assets/img/sample-menu-flyer-img/wraps.webp');"><span class="sample">SAMPLE MEAL</span></div>
-      <div class="card-head"><div class="round teal">🌯</div><h3 class="title teal-text">Wraps Delight</h3></div>
+      <div class="card-head"><div class="round teal">🌯</div><h3 class="title teal-text">Wraps Delight</h3><p class="price">$10.49</p></div>
       <ol>
         <li>Crispy Fried Sole Fish Wrap with Apple & Tomato Salsa</li>
         <li>BBQ Ground Beef & Corn Wrap with Tomato and Lettuce</li>
