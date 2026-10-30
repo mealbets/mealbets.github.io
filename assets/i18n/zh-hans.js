@@ -340,7 +340,7 @@ window.MEALBETS_ZH = {
   "Mediterranean Chicken Tzatziki Wrap": "地中海鸡肉卷饼配酸奶黄瓜酱",
   "Vegetarian Chickpea Wrap": "素食鹰嘴豆卷饼",
   "GET IN TOUCH": "联系我们",
-  "*Please note: This sample menu represents only a small portion of our full offerings. Download our app for more meal options across all categories.": "*请注意：此参考菜单仅展示完整菜单中的少量餐食。请下载应用，查看各类别的更多选择。",
+  "*Please note: Prices may vary by school. This sample menu represents only a small portion of our full offerings. Download our app for more meal options across all categories.": "*请注意：价格可能因学校不同存在差异。此参考菜单仅展示完整菜单中的少量餐食。请下载应用，查看各类别的更多选择。",
   "APPROVED VENDOR": "获批供应商",
   "School Lunch Prices and Portion Sizes | MealBets": "校园午餐价格与分量 | MealBets",
   "Pricing": "价格",
