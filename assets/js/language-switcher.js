@@ -71,6 +71,10 @@
         if (element.hasAttribute(attribute)) update(element, attribute, () => element.getAttribute(attribute), value => element.setAttribute(attribute, value));
       });
     });
+    // Only opted-in metadata is translated; canonical URLs and image URLs stay fixed.
+    document.querySelectorAll('meta[data-i18n-content]').forEach(element => {
+      update(element, 'content', () => element.getAttribute('content'), value => element.setAttribute('content', value));
+    });
     document.documentElement.lang = language;
     switcher.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
     observer.observe(document.documentElement, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: attributes });

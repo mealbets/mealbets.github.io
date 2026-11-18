@@ -21,6 +21,9 @@ class PageText(HTMLParser):
             self.text.add(value)
 
     def handle_starttag(self, tag, attrs):
+        metadata = dict(attrs)
+        if tag == 'meta' and 'data-i18n-content' in metadata:
+            self.add(metadata.get('content', ''))
         if tag in ('script', 'style', 'svg', 'noscript'):
             self.skip += 1
         if not self.skip:

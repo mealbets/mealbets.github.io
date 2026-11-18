@@ -1,9 +1,15 @@
 """Generate responsive homepage images. Requires Pillow with WebP support.
 Run from any directory; original photos and full-size lightbox links are retained.
+Use --source assets/img/chefs/name.webp to regenerate only a selected image.
 """
+import argparse
 from pathlib import Path
 from PIL import Image, ImageOps
 import re
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--source', action='append', help='Only process this recorded source path; may be repeated.')
+args = parser.parse_args()
 
 ROOT = Path(__file__).resolve().parent.parent
 page = ROOT / 'index.html'
@@ -25,6 +31,8 @@ def responsive(match):
     recorded = re.search(r'data-responsive-source="([^"]+)"', tag)
     if recorded:
         src = recorded[1]
+    if args.source and src.lstrip('/') not in {source.lstrip('/') for source in args.source}:
+        return tag
     path = ROOT / src.lstrip('/')
     with Image.open(path) as opened:
         image = ImageOps.exif_transpose(opened)
