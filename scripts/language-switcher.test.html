@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en-CA"><head><meta charset="utf-8"><title>Language switch tests</title>
+<meta name="description" content="Automatic e-Transfer Top-Up | MealBets" data-i18n-content>
+<meta property="og:url" content="https://mealbets.com/email-transfer-auto-top-up.html">
 <script defer src="../assets/i18n/zh-hans.js"></script>
 <script defer src="../assets/js/language-switcher.js"></script>
 </head><body>
@@ -26,6 +28,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     choose('zh-Hans');
     assert(document.documentElement.lang === 'zh-Hans', 'Chinese lang attribute');
     assert(document.querySelector('h1').textContent === '下载应用', 'Chinese content');
+    assert(document.querySelector('meta[name="description"]').content === '电子转账自动充值 | MealBets', 'Chinese metadata');
+    assert(document.querySelector('meta[property="og:url"]').content === 'https://mealbets.com/email-transfer-auto-top-up.html', 'Metadata URL unchanged');
     assert(input.placeholder === '首页' && input.value === 'Keep my input', 'Attribute translation preserves input');
     assert(mixed.querySelector('strong').textContent === 'MealBets', 'Inline markup preserved');
     document.getElementById('existing').click();
@@ -41,6 +45,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     assert(document.getElementById('legal').getAttribute('href') === legalHref, 'Legal link unchanged');
     choose('en-CA');
     assert(mixed.innerHTML === original, 'Exact English restoration');
+    assert(document.querySelector('meta[name="description"]').content === 'Automatic e-Transfer Top-Up | MealBets', 'English metadata restored');
     assert(input.placeholder === 'Home' && input.value === 'Keep my input', 'English attributes restored');
     assert(document.getElementById('dynamic').textContent === 'Promo code copied.', 'Dynamic English restored');
     for (let i=0;i<5;i++) { choose('zh-Hans'); choose('en-CA'); }

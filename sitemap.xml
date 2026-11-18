@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mealbets.com/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-11-18</lastmod>
   </url>
   <url>
     <loc>https://mealbets.com/faq.html</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://mealbets.com/school/how-to-order.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-11-18</lastmod>
   </url>
   <url>
     <loc>https://mealbets.com/school/sample-menu.html</loc>
@@ -35,5 +35,9 @@
   <url>
     <loc>https://mealbets.com/school/flyer.html</loc>
     <lastmod>2026-09-06</lastmod>
+  </url>
+  <url>
+    <loc>https://mealbets.com/email-transfer-auto-top-up.html</loc>
+    <lastmod>2026-11-18</lastmod>
   </url>
 </urlset>
