@@ -40,7 +40,7 @@ class PageText(HTMLParser):
             self.add(data)
 
 count = 0
-for page in [*ROOT.glob('*.html'), *(ROOT / 'school').glob('*.html')]:
+for page in [*ROOT.glob('*.html'), *(ROOT / 'school').glob('*.html'), *(ROOT / 'campaign').glob('*.html')]:
     html = page.read_text()
     if page.name in EXCLUDED:
         assert 'language-switcher' not in html, f'{page.name}: legal page must remain excluded'
