@@ -85,6 +85,78 @@ for (const url of sitemapUrls) {
   }
 }
 
+const campaignImages = new Set();
+// This campaign is shared by its direct URL and intentionally has no inbound page links.
+const standaloneCampaigns = new Set(['/campaign/monthly-giveaways.html']);
+const publicPageUrls = ['', 'school', 'campaign'].flatMap((directory) =>
+  fs.readdirSync(path.join(root, directory)).filter((file) => file.endsWith('.html'))
+    .map((file) => new URL([directory, file].filter(Boolean).join('/'), `${canonicalOrigin}/`).href)
+);
+for (const url of sitemapUrls.filter((entry) => new URL(entry).pathname.startsWith('/campaign/'))) {
+  const file = localFileFor(url);
+  const label = path.relative(root, file);
+  const html = fs.readFileSync(file, 'utf8');
+  const tags = [...html.matchAll(/<meta\b[^>]*>/gi)].map(([tag]) => Object.fromEntries(
+    [...tag.matchAll(/([\w:-]+)=["']([^"']*)["']/g)].map((match) => [match[1].toLowerCase(), match[2]])
+  ));
+  function meta(key) {
+    const matches = tags.filter((tag) => tag.name === key || tag.property === key);
+    assert.equal(matches.length, 1, `${label}: expected one ${key} meta tag`);
+    assert.ok(matches[0].content, `${label}: empty ${key}`);
+    return matches[0].content;
+  }
+
+  const title = contentValue(html, /<title>([\s\S]*?)<\/title>/i, 'title', label);
+  assert.equal(meta('og:title'), title, `${label}: social title must match page title`);
+  assert.equal(meta('twitter:title'), title, `${label}: Twitter title must match page title`);
+  assert.equal(meta('og:url'), url, `${label}: social URL must match canonical`);
+  assert.equal(meta('og:locale'), 'en_CA', `${label}: server-rendered locale must match English content`);
+  assert.equal(meta('twitter:card'), 'summary_large_image', `${label}: expected large sharing card`);
+  for (const key of ['og:description', 'twitter:description', 'og:image:alt', 'twitter:image:alt']) meta(key);
+  assert.match(meta('robots'), /max-image-preview:large/, `${label}: expected large image previews`);
+
+  const image = meta('og:image');
+  assert.equal(new URL(image).origin, canonicalOrigin, `${label}: expected a locally hosted social image`);
+  assert.equal(meta('twitter:image'), image, `${label}: sharing images must agree`);
+  assert.ok(!campaignImages.has(image), `${label}: campaigns must have distinct sharing images`);
+  campaignImages.add(image);
+  assert.equal(meta('og:image:type'), 'image/png', `${label}: social image type must match PNG`);
+  assert.equal(meta('og:image:width'), '1200', `${label}: social image width`);
+  assert.equal(meta('og:image:height'), '630', `${label}: social image height`);
+  assert.ok(fs.existsSync(localFileFor(image)), `${label}: missing social image`);
+  const imageBytes = fs.readFileSync(localFileFor(image));
+  assert.ok(imageBytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])), `${label}: invalid PNG`);
+  assert.equal(imageBytes.readUInt32BE(16), 1200, `${label}: actual PNG width`);
+  assert.equal(imageBytes.readUInt32BE(20), 630, `${label}: actual PNG height`);
+
+  const graphs = [...html.matchAll(/<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/gi)]
+    .flatMap((match) => { const data = JSON.parse(match[1]); return data['@graph'] || [data]; });
+  const page = graphs.find((item) => item['@type'] === 'WebPage' && item.url === url);
+  assert.ok(page, `${label}: missing canonical WebPage schema`);
+  assert.equal(page.name, title, `${label}: schema title must match HTML`);
+  const primaryImage = graphs.find((item) => item['@id'] === page.primaryImageOfPage?.['@id']);
+  assert.equal(primaryImage?.url, image, `${label}: schema image must match sharing image`);
+  assert.equal(primaryImage.width, 1200, `${label}: schema image width`);
+  assert.equal(primaryImage.height, 630, `${label}: schema image height`);
+  assert.ok(graphs.some((item) => item['@id'] === page.publisher?.['@id'] && item['@type'] === 'Organization'), `${label}: missing publisher`);
+  assert.ok(graphs.some((item) => item['@id'] === page.isPartOf?.['@id'] && item['@type'] === 'WebSite'), `${label}: missing parent website`);
+
+  const isStandalone = standaloneCampaigns.has(new URL(url).pathname);
+  const hasIncomingLink = publicPageUrls.filter((source) => source !== url && (isStandalone || !new URL(source).pathname.startsWith('/campaign/'))).some((source) => {
+    const sourceHtml = fs.readFileSync(localFileFor(source), 'utf8').replace(/<!--[\s\S]*?-->/g, '');
+    return [...sourceHtml.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/gi)].some((match) => {
+      const linked = new URL(match[1].replaceAll('&amp;', '&'), source);
+      linked.search = ''; linked.hash = '';
+      return linked.href === url;
+    });
+  });
+  if (isStandalone) {
+    assert.ok(!hasIncomingLink, `${label}: standalone campaign must not have inbound page links`);
+  } else {
+    assert.ok(hasIncomingLink, `${label}: needs a crawlable link from a non-campaign page`);
+  }
+}
+
 const utilityPages = [
   'download.html'
 ];
